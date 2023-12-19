@@ -10,12 +10,12 @@ This plugin enable all the endpoints described in the OAI-PMH [documentation](ht
 - `/oai?verb=ListIdentifiers&metadataPrefix=<metadata_prefix>`: is an abbreviated form of `ListRecords`, retrieving only headers rather than datasets. It makes use of the same additional arguments as its extended version: `from`, `until`, `set`, `resumptionToken` and `metadataPrefix`.
 - `/oai?verb=ListSets`: used to retrieve the organizations structure of the CKAN instance. It makes use of one additional argument: `resumptionToken`. This parameter is used for pagination.
 
-This extension is configurated to used the `dcat_ap_edp_mqa` profile described in [ckanext-dcat-ap-edp-mqa](https://github.com/tlmat-unican/ckanext-dcat-ap-edp-mqa/tree/main) when using `metadataPrefix=dcat` (this can be seen in `metadata_registry.py` file). However, this is customisable. You can either use another profile or even develop your own, like it is done in the [ckanext-dcat-ap-edp-mqa](https://github.com/tlmat-unican/ckanext-dcat-ap-edp-mqa/tree/main) extension and use it here.
+This extension is configurated to used the `dcat_ap_edp_mqa` profile described in [ckanext-dcat-ap-edp-mqa](https://github.com/SALTED-Project/ckanext-dcat-ap-edp-mqa/tree/main) when using `metadataPrefix=dcat` (this can be seen in `metadata_registry.py` file). However, this is customisable. You can either use another profile or even develop your own, like it is done in the [ckanext-dcat-ap-edp-mqa](https://github.com/SALTED-Project/ckanext-dcat-ap-edp-mqa/tree/main) extension and use it here.
 
 
 ## Requirements
 - This extension has been developed using CKAN 2.10.1 version.
-- It makes use of [ckanext-dcat-ap-edp-mqa](https://github.com/tlmat-unican/ckanext-dcat-ap-edp-mqa/tree/main).
+- It makes use of [ckanext-dcat-ap-edp-mqa](https://github.com/SALTED-Project/ckanext-dcat-ap-edp-mqa/tree/main).
 
 
 ## Installation - Docker-compose
@@ -23,10 +23,10 @@ This extension is configurated to used the `dcat_ap_edp_mqa` profile described i
 To install `ckanext-oai-pmh-server`:
 1. Add the extension to the Dockerfile and add these lines at the end (folder path: `ckan-docker/ckan/`):
     ```bash
-    RUN pip3 install -e git+https://github.com/tlmat-unican/ckanext-oai-pmh-server.git@main#egg=ckanext-oai-pmh-server && \
+    RUN pip3 install -e git+https://github.com/SALTED-Project/ckanext-oai-pmh-server.git@main#egg=ckanext-oai-pmh-server && \
     pip3 install -r ${APP_DIR}/src/ckanext-oai-pmh-server/requirements.txt
     ```
-    **Note**: Make sure to install [ckanext-dcat-ap-edp-mqa](https://github.com/tlmat-unican/ckanext-dcat-ap-edp-mqa/tree/main) too.
+    **Note**: Make sure to install [ckanext-dcat-ap-edp-mqa](https://github.com/SALTED-Project/ckanext-dcat-ap-edp-mqa/tree/main) too.
 
 2. Add parameters to `.env` file(folder path: `ckan-docker/`):
     ```bash
@@ -49,11 +49,11 @@ To install `ckanext-oai-pmh-server`:
 To install `ckanext-oai-pmh-server`:
 1. Clone the GitHub repository(folder path: `ckan-docker/src/`):
     ```bash
-    git clone https://github.com/tlmat-unican/ckanext-oai-pmh-server.git
+    git clone https://github.com/SALTED-Project/ckanext-oai-pmh-server.git
     ```
     **Notes**: 
     - if `src/` folder does not exist, create it.
-    - make sure to install [ckanext-dcat-ap-edp-mqa](https://github.com/tlmat-unican/ckanext-dcat-ap-edp-mqa/tree/main) too.
+    - make sure to install [ckanext-dcat-ap-edp-mqa](https://github.com/SALTED-Project/ckanext-dcat-ap-edp-mqa/tree/main) too.
 
 2. Add parameters to `.env` file (folder path: `ckan-docker/`):
     ```bash
